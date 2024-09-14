@@ -85,8 +85,9 @@ export function displayCart() {
         let totalPrice = 0;
         let totalServings = 0;
         cart.forEach((dish) => {
-            totalPrice += dish.price ;
+            totalPrice += (dish.price * dish.nos) ;
             totalServings += dish.nos;
+            
             const order = document.createElement("li");
             order.className = "order"
     
