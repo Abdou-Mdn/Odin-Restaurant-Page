@@ -1,3 +1,0 @@
-to run the live preview of this project 
-run the command "npx webpack --watch" in the terminal first
-the open the index.html file using firefox browser....
