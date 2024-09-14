@@ -332,8 +332,12 @@ h1 span, h2 span {
 }
 
 #menuSection #cartBtn {
-    text-align: right;
-    padding: 0.5rem 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.2rem;
+    padding: 0;
+    margin: 0 auto;
     position: relative;
 }
 
@@ -356,8 +360,8 @@ h1 span, h2 span {
     padding: 0.1rem 0.3rem;
     border-radius: 30%;
     position: absolute;
-    top: -0.45rem;
-    right: 7.65rem;
+    top: -0.8rem;
+    right: -0.3rem;
 }
 
 #menuSection .container {
@@ -811,7 +815,6 @@ h1 span, h2 span {
     #teamSection .profile .infos {
         display: flex;
     }
-
 
     #cartSection {
         width: 80%;

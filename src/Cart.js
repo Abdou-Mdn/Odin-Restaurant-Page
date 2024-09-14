@@ -5,31 +5,28 @@ import createOrderPage from "./Order";
 let cart = [];
 
 const isDishOnCart = (name) => {
-    let indexOfDish = -1;
+    let dishOnCart = false;
     
     for(let i=0; i< cart.length;i++){
         if (cart[i].name == name) {
-            indexOfDish = i;
+            indexOfDish = true;
             break;
         }
     }
 
-    return indexOfDish;
+    return dishOnCart;
 }
 
 export function addDishToCart(name,price) {
+    const dishOnCart = isDishOnCart(name);
 
-    const index = isDishOnCart(name);
-
-    if (index == -1) {
+    if (dishOnCart == false) {
         const dish = {
             name: name,
             nos: 1,
             price: price
         };
         cart.push(dish);    
-    } else {
-        cart[index].nos++;
     }
 }
 
@@ -138,6 +135,8 @@ export function displayCart() {
             const deleteBtn = document.createElement("i");
             deleteBtn.classList.add("fa","fa-trash");
             deleteBtn.addEventListener("click",() => {
+                totalServings -= dish.nos;
+                totalPrice -= (dish.price * dish.nos);
                 cart.splice(cart.indexOf(dish),1);
                 updateCartContainer();
             })
