@@ -135,8 +135,6 @@ export function displayCart() {
             const deleteBtn = document.createElement("i");
             deleteBtn.classList.add("fa","fa-trash");
             deleteBtn.addEventListener("click",() => {
-                totalServings -= dish.nos;
-                totalPrice -= (dish.price * dish.nos);
                 cart.splice(cart.indexOf(dish),1);
                 updateCartContainer();
             })
