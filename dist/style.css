@@ -1,0 +1,849 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root {
+    --COLOR-1: #18181b;
+    --COLOR-2: #fac031;
+    --COLOR-3: #fff;
+    --COLOR-4: #52525b; /*  #0000009f*/
+    --COLOR-5: #dc2626;
+ 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+    outline: none;
+}
+
+body {
+    font-size: 17px;
+    position: relative;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2.5rem;
+    background-color: var(--COLOR-3);
+    box-shadow: 0 0 10px #0000002d;
+    z-index: 5;
+}
+
+#logo {
+    width: 6rem;
+    padding-bottom: 0.5rem;
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin: 0 2rem;
+}
+
+header button {
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+    color: var(--COLOR-1);
+    cursor: pointer;
+}
+
+header button::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: var(--COLOR-2);
+    display: block;
+    transition: all 0.2s linear;
+}
+
+header button:hover, header button:focus, .active  {
+    color: var(--COLOR-2);
+}
+
+header button:hover::after, header button:focus::after, .active::after {
+    width: 100%;
+}
+
+footer {
+    width: 100%;
+    background-color: var(--COLOR-4);
+    text-align: center;
+    color: var(--COLOR-3);
+    padding: 1rem;
+    position: relative;
+    z-index: 4;
+}
+
+footer > div {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+footer h3 {
+    font-size: 1.2rem;
+    margin: 0.5rem;
+}
+
+footer ul {
+    list-style: none;
+    font-size: 1rem;
+}
+
+footer ul li {
+    margin: 0.5rem auto;
+}
+
+footer a, footer a:visited {
+    color: var(--COLOR-3);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+footer a:hover, footer a:focus {
+    color: var(--COLOR-2);
+    font-size: 1.1rem;
+}
+
+footer .socials {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.3rem
+}
+
+footer .socials a:hover, footer .socials a:focus {
+    font-size: 1.5rem;
+}
+
+footer p {
+    width: 60%;
+    border-top: 2px solid var(--COLOR-2);
+    margin: 0 auto;
+    margin-top: 1rem;
+    padding-top: 1rem;
+}
+
+#content {
+    margin-top: 6rem;
+    min-height: 100vh;
+}
+
+#heroSection, #aboutSection {
+    width: 100%;
+    min-height: 30rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;  
+    background-size: auto 30rem;
+    background-repeat: no-repeat; 
+}
+
+#heroSection {
+    justify-content: flex-start;
+    background-image: url(image/main_img.png);
+    background-position: right center;
+}
+
+#aboutSection {
+    justify-content: flex-end;
+    background-image: url(image/Food-Plate.png);
+    background-position: left center;
+}
+
+#heroSection .container, #aboutSection .container {
+    margin-top: 1rem;
+    margin-left: 2rem;
+    padding: 2rem;
+    max-width: 50%;
+    z-index: 2;
+    text-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+h1 {
+    color: var(--COLOR-1);
+    font-size: 3rem;
+    overflow-wrap: wrap;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h1 span, h2 span {
+    color: var(--COLOR-2);
+    display: inline-block;
+}
+
+#heroSection p, #aboutSection p {
+    font-size: 1rem;
+    margin: 1rem 0;
+    width: 90%;
+}
+
+#heroSection button,
+#orderSection form button {
+    margin-top: 1rem;
+    width: 15rem;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: var(--COLOR-2);
+    color: var(--COLOR-3);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#heroSection button:hover,#heroSection button:focus,
+#orderSection form button:hover,#orderSection form button:focus {
+    transform: scale(1.05);
+}
+
+#teamSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+    background-image: url(image/bg1.jpg); 
+    min-height: 100vh;
+}
+
+
+#teamSection .container, #menuSection .container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+#teamSection .profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    height: 16rem;
+    width: 16rem;
+    box-shadow: 0 0 8px #0000005d;
+    border-radius: 50%;
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#teamSection .profile .pic {
+    height: 13rem;
+    width: 13rem;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 1.5rem;
+    transition: all 0.2s ease;
+    z-index: 1;
+}
+
+#teamSection .infos {
+    margin-top: 7rem;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 0.5rem;
+    display: none;
+}
+
+#teamSection .infos h3 {
+    color: var(--COLOR-2);
+}
+
+#teamSection .infos p {
+    width: 80%;
+    text-align: center;
+}
+
+#teamSection .socials {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+#teamSection .socials a {
+    color: var(--COLOR-1);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#teamSection .socials a:hover {
+    color: var(--COLOR-2);
+    font-size: 1.2rem;
+}
+
+#teamSection .profile:hover {
+    border-radius: 1rem;
+    height: auto;
+}
+
+#teamSection .profile:hover .pic {
+    border-radius: 10%;
+    top: -5rem;
+}
+
+#teamSection .profile:hover .infos {
+    display: flex;
+}
+
+#menuSection h1, #orderSection h1 {
+    text-align: center;
+    margin: 1rem auto;
+}
+
+#menuSection #cartBtn {
+    text-align: right;
+    padding: 0.5rem 8rem;
+    position: relative;
+}
+
+#menuSection #cartBtn img {
+    display: inline;
+    width: 2rem;
+    height: auto;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#menuSection #cartBtn img:hover {
+    transform: scale(1.1);
+}
+
+#menuSection #cartBtn #notification {
+    font-size: 0.8rem;
+    color: var(--COLOR-3);
+    background-color: var(--COLOR-5);
+    padding: 0.1rem 0.3rem;
+    border-radius: 30%;
+    position: absolute;
+    top: -0.45rem;
+    right: 7.65rem;
+}
+
+#menuSection .container {
+    padding: 2rem;
+}
+
+#menuSection .container .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    width: 17rem;
+    padding: 1rem;
+    box-shadow: 0 0 8px #0000005d;
+    border-radius: 1rem;
+    text-align: center;
+    position: relative;
+}
+
+#menuSection .box .imageContainer {
+    height: 13rem;
+    width: 13rem;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+#menuSection .box .imageContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.2s ease;
+}
+
+#menuSection .box:hover .imageContainer img {
+    transform: scale(1.1);
+}
+
+#menuSection .likeBtn {
+    display: none;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 1.2rem;
+    right: 2.5rem;
+    font-size: 1.2rem;
+    color: var(--COLOR-1);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 2;
+}
+
+#menuSection .box:hover .likeBtn {
+    display: inline-block;
+}
+
+#menuSection .likeBtn.liked {
+    color: var(--COLOR-2);
+}
+
+#menuSection .likeBtn:hover {
+    font-size: 1.4rem;
+}
+
+#menuSection .box h3 {
+    color: var(--COLOR-2);
+}
+
+#menuSection .box span {
+    font-weight: 600;
+}
+
+#menuSection .box .review i {
+    margin-inline: 0.1rem;
+    font-size: 1.2rem;
+    color: var(--COLOR-2);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#menuSection .box .review:hover i {
+    font-size: 1.5rem;
+}
+
+#menuSection .box .addBtn {
+    width: 7rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--COLOR-3);
+    color: var(--COLOR-3);
+    background-color: var(--COLOR-1);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#menuSection .box .addBtn:hover, #menuSection .box .addBtn:focus {
+    color: var(--COLOR-1);
+    border: 1px solid var(--COLOR-1);
+    background-color: var(--COLOR-2);
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: #00000022;
+    display: none;
+}
+
+#overlay.active, #cartSection.active {
+    display: block;
+    right: 0;
+}
+
+#cartSection {
+    position: absolute;
+    top: -0.5rem;
+    right: -100%;
+    height: 100%;
+    width: 50%;
+    padding: 1rem;
+    background-color: var(--COLOR-1);
+    color: var(--COLOR-3);
+    z-index: 3;
+    transition: all 0.4s ease;
+}
+
+
+#cartSection #closeBtn {
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#cartSection #closeBtn:hover {
+    font-size: 1.5rem;
+    color: var(--COLOR-2);
+}
+
+#cartContainer {
+    font-size: 1.1rem;
+    padding: 1rem;
+    margin: 1rem auto;
+    background-color: var(--COLOR-1);
+    color: var(--COLOR-3);
+}
+
+#cartContainer h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--COLOR-2);
+    text-align: center;
+    text-decoration: underline;
+    margin: 1rem auto 1.5rem;
+}
+
+#cartContainer p {
+    text-align: center;
+}
+
+#link {
+    text-decoration: underline;
+    text-wrap: nowrap;
+    cursor: pointer;
+}
+
+#link:hover, #link:focus {
+    color: var(--COLOR-2);
+}
+
+#titles .price, #titles .serving {
+    text-align: center;
+}
+
+#titles,#total,.order {
+    display: grid;
+    grid-template-columns: 2fr 1fr 3.5fr 0.5fr;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    align-items: center;
+}
+
+#titles { 
+    color: var(--COLOR-2);
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+
+.order,#total {
+   padding: 1rem 0.5rem;
+   border-radius: 0.5rem;
+}
+
+.order{
+    position: relative;
+}
+
+.order::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20rem;
+    height: 1px;
+    background-color: var(--COLOR-2);
+}
+
+#total {
+    background-color: #52525b55;
+}
+
+.order .price,#total .price {
+    font-weight: 600;
+}
+
+.order .serving,#total .serving,
+.order .price,#total .price {
+   place-self: center;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   gap: 1rem;
+}
+
+.order i {
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    color: var(--COLOR-5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+}
+
+.order i:hover {
+    color: var(--COLOR-3);
+    background-color: var(--COLOR-5);
+}
+
+.order .serving i {
+    color: var(--COLOR-4);
+}
+
+.order .serving i:hover {
+    color: var(--COLOR-3);
+    background-color: var(--COLOR-4);
+}
+
+.buttons {
+    width: 70%;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+}
+
+.buttons button {
+    padding: 0.3rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--COLOR-1);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.buttons #emptyBtn {
+    border: 1px solid var(--COLOR-5);
+    color: var(--COLOR-5);
+}
+
+.buttons #checkBtn {
+    border: 1px solid var(--COLOR-2);
+    color: var(--COLOR-2);
+}
+
+#orderSection #checkBtn {
+    display: none;
+}
+
+.buttons #emptyBtn:hover, .buttons #emptyBtn:focus {
+    border: 1px solid var(--COLOR-3);
+    color: var(--COLOR-3);
+    background-color: var(--COLOR-5);
+}
+
+.buttons #checkBtn:hover, .buttons #checkBtn:focus {
+    border: 1px solid var(--COLOR-1);
+    color: var(--COLOR-1);
+    background-color: var(--COLOR-2);
+}
+
+#orderSection {
+    padding: 1rem;
+}
+
+#orderSection .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding-bottom: 1rem;
+}
+
+
+#orderSection #cartContainer {
+    flex: 1;
+    height: 100vh;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 10px #000000a3;
+    overflow-y: scroll;
+}
+
+#orderSection form {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    background-image: url(image/bg2.jpg);
+    background-size: 70rem auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#orderSection form p {
+    font-size: 0.9rem;
+}
+
+#orderSection form div {
+    width: 60%;
+    padding: 0.5rem;
+}
+
+#orderSection form input {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid var(--COLOR-4);
+    border-radius: 0.5rem;
+}
+
+#orderSection form input:focus {
+    border: 1px solid var(--COLOR-2);
+    box-shadow: 0 0 8px #00000022;
+}
+
+/* media queries */
+
+@media screen and (max-width: 900px){
+    header {
+        flex-direction: column;
+    }
+
+    #logo {
+       margin-bottom: 1rem;
+    }
+
+    header nav ul li {
+        margin: 0 0.5rem;
+    }
+
+    #content {
+        margin-top: 8.5rem;
+    }
+
+    #heroSection, #aboutSection {
+        flex-direction: column;
+        justify-content: center;
+        background-image: none;
+        text-align: center;
+    }
+
+    #heroSection::before, #aboutSection::before {
+        content: "";
+        display: block;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 60%;
+        height: 25vh;
+        margin: 0.5rem auto;
+    }
+
+    #heroSection::before {
+        background-image: url(image/main_img.png);
+    }
+
+    #aboutSection::before{
+        background-image: url(image/Food-Plate.png);
+    }
+
+    #heroSection .container, #aboutSection .container {
+        max-width: 100%;
+        margin: 0;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    h1 {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+        width: 80%;
+        text-align: center;
+    }
+
+    #heroSection p {
+        text-align: center;
+    }
+
+    #heroSection button {
+        margin: 0;
+    }
+    
+    #aboutSection p {
+        margin: 0;
+    }
+
+    #teamSection .container {
+        width: 70%;
+    }
+
+    #teamSection .profile {
+        margin-top: 5rem;
+        border-radius: 1rem;
+        height: auto;
+    }
+
+    #teamSection .profile .pic {
+        border-radius: 10%;
+        top: -5rem;
+    }
+
+    #teamSection .profile .infos {
+        display: flex;
+    }
+
+
+    #cartSection {
+        width: 80%;
+    }
+
+    /* .order {
+        word-wrap: break-word;
+    } */
+
+    .order::after {
+        width: 12rem;
+    }
+
+    .buttons {
+        width: 100%;
+    }
+
+    #orderSection .container {
+        flex-direction: column;
+    }
+
+    #orderSection form, #orderSection #cartContainer {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #cartSection {
+        width: 100%;
+    }
+
+    #orderSection form, #orderSection #cartContainer {
+        width: 100%;
+    }
+}
